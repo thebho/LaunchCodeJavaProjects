@@ -15,10 +15,20 @@ import mario.print.*;
 
 
 public class Pyramid {
-    public Pyramid() {
+
+    private static Pyramid pyramid;
+
+    private Pyramid() {}
+
+    public static Pyramid getInstance(){
+        if (pyramid == null) {
+            pyramid = new Pyramid();
+        }
+        return pyramid;
     }
 
-    public static int pyramidHeight() {
+
+    public int pyramidHeight() {
 
         String pyramidHeight = null;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
